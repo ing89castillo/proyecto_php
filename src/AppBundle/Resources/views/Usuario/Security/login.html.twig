@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    INSYS | Login
+{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid">
+        {% if error %}
+            <div class="alert alert-danger" role="alert">
+                {{ error.messageKey|trans(error.messageData, 'security') }}
+            </div>
+        {% endif %}
+
+        <div class="container">
+            <section id="content">
+                <form action="{{ path('login') }}" method="post">
+                    <h1>Log in Form</h1>
+                    <div>
+                        <input type="email" placeholder="Username" id="username" name="_username" value="{{ last_username }}"/>
+                    </div>
+                    <div>
+                        <input type="password" placeholder="Password" id="password" name="_password"/>
+                    </div>
+                    <div>
+                        <button type="submit">Log in</button>
+                        <a href="#">Lost your password?</a>
+                        <a href="http://insys/app_dev.php/logup">Register</a>
+                    </div>
+                </form><!-- form -->
+                <div class="button">
+                    <a>Welcome to INSYS</a>
+                </div><!-- button -->
+            </section><!-- content -->
+        </div><!-- container -->
+
+    </div>
+
+{% endblock %}

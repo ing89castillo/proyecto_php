@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    INSYS | Logup
+{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <section id="content">
+            {{ form_start(form) }}
+                <h1>Log up Form</h1>
+                <div>
+                    {{ form_widget(form.nombre) }}
+                    {{ form_errors(form.nombre) }}
+
+                    {{ form_widget(form.apellido) }}
+                    {{ form_errors(form.apellido) }}
+
+                    {{ form_widget(form.email) }}
+                    {{ form_errors(form.email) }}
+
+                    {{ form_widget(form.password) }}
+                    {{ form_errors(form.password) }}
+                </div>
+                <div>
+                    <button type="submit">Log up</button>
+                    <a href="#">Lost your password?</a>
+                    <a href="http://insys/app_dev.php/login">Login</a>
+                </div>
+            {{ form_end(form) }}
+            <div class="button">
+                <a>Welcome to INSYS</a>
+            </div><!-- button -->
+        </section><!-- content -->
+    </div><!-- container -->
+
+{% endblock %}

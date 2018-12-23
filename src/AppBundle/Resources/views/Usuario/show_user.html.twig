@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    Ver usuario
+{% endblock %}
+
+{% block body %}
+
+    <!-- <div> Nombre: {{ usuarios[0].nombre }} {{ usuarios[0].apellido }} </div> -->
+
+    <div class="container">
+        <h1>Lista de usuarios</h1>
+        <div class="container">
+            {% for usuario in usuarios %}
+                <li>{{ usuario.nombre }} {{ usuario.apellido }} - {{ usuario.email }}</li>
+            {% endfor%}
+        </div>
+    </div>
+{% endblock %}
